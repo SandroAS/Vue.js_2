@@ -1,10 +1,10 @@
 <template>
   <ul v-if="paginasTotal > 1">
-    <router-link :to="{query: query(1)}">Primeira</router-link>
+    <router-link id="primeira" :to="{query: query(1)}">Primeira</router-link>
     <li v-for="pagina in paginas" :key="pagina">
     <router-link :to="{query: query(pagina)}">{{pagina}}</router-link>
     </li>
-    <router-link :to="{query: query(paginasTotal)}">Última</router-link>
+    <router-link id="ultima" :to="{query: query(paginasTotal)}">Última</router-link>
   </ul>
 </template>
 
@@ -71,5 +71,14 @@ li a {
 li a .router-link-exact-active, li a:hover {
   background: #87f;
   color: #fff;
+}
+
+li .router-link-exact-active{
+    background: #87f;
+  color: #fff;
+}
+
+#primeira:hover, #ultima:hover {
+  color: #87f;
 }
 </style>
