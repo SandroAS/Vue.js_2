@@ -5,6 +5,7 @@ import { api } from "@/services.js"
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  strict: true,
   state: {
     login: false,
     usuario: {
@@ -17,7 +18,7 @@ export default new Vuex.Store({
       numero: "",
       bairro: "",
       cidade: "",
-      estado: "",
+      estado: ""
     }
   },
   mutations: {
@@ -25,16 +26,16 @@ export default new Vuex.Store({
       state.login = payload;
     },
     UPDATE_USUARIO(state, payload) {
-      state.usuario = payload;
+      state.usuario = Object.assign(state.usuario, payload);
     }
   },
   actions: {
     getUsuario(context, payload) {
-      api.get(`/usuario/${payload}`).then(response => {
+      return api.get(`/usuario/${payload}`).then(response => {
         context.commit("UPDATE_USUARIO", response.data);
         context.commit("UPDATE_LOGIN", true);
-      })
-    }
+      });
+    },
   },
   modules: {
   }
