@@ -3,7 +3,18 @@
     {
       "id": "andre@origamid.com",
       "email": "andre@origamid.com",
-      "name": "André Rafael",
+      "nome": "André Rafael",
+      "senha": "123",
+      "rua": "Rua Ali Perto",
+      "cep": "12345678",
+      "numero": "25",
+      "estado": "RJ",
+      "cidade": "Rio de Janeiro"
+    },
+    {
+      "id": "joao@origamid.com",
+      "email": "joao@origamid.com",
+      "nome": "João Marcos",
       "senha": "123",
       "rua": "Rua Ali Perto",
       "cep": "12345678",
