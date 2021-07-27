@@ -20,6 +20,7 @@ export default {
         proco: "",
         descricao: "",
         fotos: null,
+        vendido: "false",
       }
     }
   },
