@@ -33,7 +33,7 @@ export default {
       button.setAttribute("disabled", "");
       try {
         await this.$store.dispatch("criarUsuario", this.$store.state.usuario);
-        await this.$store.dispatch("logarUsuario", this.$store.state.usuario);
+        //await this.$store.dispatch("logarUsuario", this.$store.state.usuario);
         await this.$store.dispatch("getUsuario");
         this.$router.push({ name: "usuario" });
       } catch (error) {

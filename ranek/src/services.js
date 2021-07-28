@@ -35,7 +35,7 @@ export const api = {
       return axios.post("http://ranekapolocal.local/wp-json/jwt-auth/v1/token", body);
     },
     validateToken() {
-      return axios.post("http://ranekapolocal.local/wp-json/jwt-auth/v1/token/validate");
+      return axiosInstance.post("http://ranekapolocal.local/wp-json/jwt-auth/v1/token/validate");
     }
 
    */

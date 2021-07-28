@@ -13,12 +13,22 @@
 <script>
 import TheHeader from "@/components/TheHeader.vue"
 import TheFooter from "@/components/TheFooter.vue"
+//import {api} from "@/services.js"
 
 export default {
   components: {
     TheHeader,
     TheFooter,
   },
+  // created() {
+  //   if(window.localStorage.token) {
+  //     api.validadeToken().then(response => {
+  //       this.$store.dispatch("getUsuario")
+  //     }).catch(error => {
+  //       window.localStorage.removeItem("token");
+  //     })
+  //   }
+  // }
 }
 </script>
 <style>
