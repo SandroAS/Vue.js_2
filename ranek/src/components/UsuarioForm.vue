@@ -10,7 +10,7 @@
     </div>
     
     <label for="cep">Cep</label>
-    <input type="text" id="cep" name="cep" v-model="cep">
+    <input type="text" id="cep" name="cep" v-model="cep" @keyup="preencherCep()">
     <label for="rua">Rua</label>
     <input type="text" id="rua" name="rua" v-model="rua">
     <label for="numero">Número</label>

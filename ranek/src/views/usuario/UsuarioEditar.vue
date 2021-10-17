@@ -1,5 +1,6 @@
 <template>
   <section>
+    <ErrorNotificacao :error="erros"/>
     <UsuarioForm>
       <button class="btn" @click.prevent="atualizarUsuario">Ativar Usuário</button>
     </UsuarioForm>
@@ -15,6 +16,11 @@ export default {
   components: {
     UsuarioForm
   },
+  data() {
+    return {
+      erros: []
+    }
+  },
   methods: {
     atualizarUsuario() {
       api
@@ -24,6 +30,7 @@ export default {
         this.$router.push({name: "usuario"});
       })
       .catch(error => {
+        this.erros.push(error.response.data.message);
         console.log(error.response);
       });
     }

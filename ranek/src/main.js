@@ -3,10 +3,12 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import PaginaCarregando from "@/components/PaginaCarregando.vue"
+// import LoginCriar from "@/components/LoginCriar.vue"
 
 Vue.config.productionTip = false
 
 Vue.component("PaginaCarregando", PaginaCarregando);
+// Vue.component("LoginCriar", LoginCriar);
 
 Vue.filter("numeroPreço", valor => {
   valor = Number(valor);

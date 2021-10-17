@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import { api } from "@/services.js";
+import axios from 'axios';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -49,6 +50,12 @@ export default new Vuex.Store({
         context.commit("UPDATE_LOGIN", true);
       });
     },
+    // getU(context) {
+    //   axios.get('/usuario').then(response => {
+    //     context.commit("UPDATE_USUARIO", response.data);
+    //     context.commit("UPDATE_LOGIN", true);
+    //   })
+    // }
     criarUsuario(context, payload) {
       context.commit("UPDATE_USUARIO", { id: payload.email });
       return api.post("/usuario", payload);

@@ -9,14 +9,14 @@
       <button class="btn" @click.prevent="logar">Logar</button>
     </form>
     <p class="perdeu">
-      <a href="/" target="_blank">Perdeu a senha? Clique aqui.</a>
+      <a href="http:localhost8080/wp-login.php?action=lostpassword" target="_blank">Perdeu a senha? Clique aqui.</a>
     </p>
     <LoginCriar/>
   </section>
 </template>
 
 <script>
-import LoginCriar from "@/components/LoginCriar.vue";
+import LoginCriar from "./../components/LoginCriar.vue";
 
 export default {
   name: "Login",
@@ -33,10 +33,16 @@ export default {
   },
   methods: {
     logar() {
-      //this.$store.dispatch("logarUsuario", this.login).then(response => {
+      //this.erros = [];
+      // this.$store
+      // .dispatch("logarUsuario", this.login)
+      // .then(response => {
         this.$store.dispatch("getUsuario", this.login.email); // this.$store.dispatch("getUsuario");
-        this.$router.push({name: "usuario"});
-      //})
+        this.$router.push('/usuario');
+      // })
+      // .catch(error => {
+      //  this.erros.push(error.response.data.message);
+      // })
     }
   }
 };

@@ -5,7 +5,10 @@
     <label for="preco">Preço (R$)</label>
     <input id="preco" name="preco" type="number" v-model="produto.preco">
     <label for="fotos">Fotos</label>
-    <input id="fotos" name="fotos" type="file" ref="fotos">
+    <input id="fotos" name="fotos" type="file" multiple ref="fotos">
+    <label for="preco">Descrição</label>
+    <textarea id="preco" name="preco" type="text" v-model="produto.descricao"></textarea>
+    <input class="btn" type="button" value="Adicionar Produto" @click.prevent="adicionarProduto">
   </form>
 </template>
 
@@ -26,10 +29,25 @@ export default {
   },
   methods: {
     formatarProduto() {
+      // const form = new FormData();
+
+      // const files = this.$refs.fotos.files;
+      // for(let i = 0; i < file.length; i++) {
+      //   form.append(files[i].name, files[i]);
+      // }
+
+      // form.append("nome", this.produto.nome);
+      // form.append("preco", this.produto.preco);
+      // form.append("descricao", this.produto.descricao);
+      // form.append("vendido", this.produto.vendido);
+      // form.append("usuario_id", this.produto.usuario_id);
+
+      // return form;
       this.produto.usuario_id = this.$store.state.usuario.id
     },
     adicionarProduto() {
-      api.post("/produto", this.produto).then(() => {
+      this.formatarProduto(); //const produto = this.formatarProduto();
+      api.post("/produto", this.produto).then(() => { //api.post("/produto", produto).then(() => {
         this.$store.dispatch("getUsuarioProdutos");
       })
     }

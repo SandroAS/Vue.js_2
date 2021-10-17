@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import ProdutoItem from "@/componentes/ProdutosItem.vue";
+import ProdutoItem from "./../../components/ProdutoItem.vue";
 import {api} from "@/services.js";
 import {mapState} from "vuex";
 

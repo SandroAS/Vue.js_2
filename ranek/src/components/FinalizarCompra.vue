@@ -45,16 +45,19 @@ export default {
     async criarUsuario() {
       try {
         await this.$store.dispatch("criarUsuario", this.$store.state.usuario);
+        // await this.$store.dispatch("logarUsuario", this.$store.state.usuario);
         await this.$store.dispatch(
           "getUsuario",
           this.$store.state.usuario.email
         );
         await this.criarTransacao();
       } catch (error) {
+        this.erros.push(error.response.data.message);
         console.log(error);
       }
     },
     finalizarCompra() {
+      this.erros = [];
       if(this.$store.state.login) {
         this.criarTransacao();
       } else {

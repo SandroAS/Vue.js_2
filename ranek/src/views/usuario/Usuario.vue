@@ -15,14 +15,13 @@
           <router-link :to="{name: 'usuario-editar'}">Editar Usuário</router-link>
         </li>
         <li>
-          <button @click.prevent="deslogar">Deslogar</button>
+          <button class="btn" @click.prevent="deslogar">Deslogar</button>
         </li>
       </ul>
     </nav>
     <transition mode="out-in">
       <router-view></router-view>
     </transition>
-    <p>Página do Usuário {{$store.state.usuario}}</p>
   </section>
 </template>
 
@@ -39,6 +38,16 @@ export default {
 </script>
 
 <style scoped>
+.btn {
+  background: #f4f7fc;
+  color: #87f;
+}
+
+.btn:hover{
+  background: #87f;
+  color: #f4f7fc;
+}
+
 .usuario {
   display: grid;
   grid-template-columns: minmax(140px, 200px) 1fr;

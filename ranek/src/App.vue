@@ -81,6 +81,11 @@ img {
   transform: scale(1.1);
 }
 
+.btn-disabled {
+  background: #bbc;
+  transform: scale(1.1);
+}
+
 #app {
   display: flex;
   min-height: 100vh;
@@ -104,6 +109,7 @@ input, textarea {
   font-size: 1rem;
   font-family: Helvetica, Arial, sans-serif;
   margin-bottom: 15px;
+  width: 100%;
 }
 
 input:hover, input:focus, textarea:hover, textarea:focus {
